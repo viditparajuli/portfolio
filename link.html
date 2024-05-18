@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input as Link</title>
+</head>
+
+<body>
+  <label for="link">Enter link</label>
+  <input type="text" name="link" id="link" placeholder="Enter link">
+  <button type="submit">Submit</button>
+  <a href="" target="_blank" id="link">Open link</a>
+  <script>
+    const link = document.getElementById('link');
+    const submit = document.querySelector('button');
+    const open = document.querySelector('a');
+
+    submit.addEventListener('click', () => {
+      open.textContent = link.value;
+      open.href = link.value;
+    });
+  </script>
+</body>
+
+</html>
